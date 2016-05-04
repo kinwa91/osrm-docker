@@ -16,6 +16,12 @@ docker run \
     echo "running data container..."
 ```
 
+If you've extracted and prepared maps using a different server, `bash` into the data container and move the map files into the data container's file system.
+
+```
+docker run -it --volumes-from osrm-data -v /data:/my_data acroca/osrm-docker:latest bash
+```
+
 Now you can run your osrm server with any map.
 
 ```
